@@ -168,7 +168,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         float yaw = Input.GetAxis("Horizontal") * dodgeSpeed / 10;
 
-        myT.Rotate(0, yaw, 0);
+        myT.Rotate(0, 0, -yaw);
 
         if(yaw > 45)
         {
