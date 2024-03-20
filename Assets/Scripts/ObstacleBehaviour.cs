@@ -7,6 +7,8 @@ public class ObstacleBehaviour : MonoBehaviour
     public float waitTime = 2.0f;
 
     public GameObject explosion;
+
+
     /// <summary>
     /// If the object is tapped, we spawn an explosion and
     /// destroy this object
@@ -22,11 +24,11 @@ public class ObstacleBehaviour : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         
         // First check if we collided with the player
-        if (collision.gameObject.GetComponent<PlayerBehaviour>())
+        if (collision.gameObject.GetComponent<PlayerBuff>().enabled == true)
         {
             // Destroy the player
             Destroy(collision.gameObject);

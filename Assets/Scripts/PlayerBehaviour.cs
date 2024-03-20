@@ -112,6 +112,20 @@ public class PlayerBehaviour : MonoBehaviour
          {
          // Move player based on direction of the accelerometer
          horizontalSpeed = Input.acceleration.x * dodgeSpeed;
+
+        float yaw = Input.GetAxis("Horizontal") * dodgeSpeed / 10;
+
+        myT.Rotate(0, 0, -yaw);
+
+        if(yaw > 45)
+        {
+            myT.Rotate(45, 0, 0);
+        }
+
+        else if(yaw < -45)
+        {
+            myT.Rotate(45, 0, 0);
+        }
          }
 
          // Check if Input has registered more than zero touches
@@ -130,7 +144,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         float currentSpeed = rb.velocity.magnitude;
 
-        Debug.Log(currentSpeed);
+        //Debug.Log(currentSpeed);
 
         if(currentSpeed >= 8)
         {
