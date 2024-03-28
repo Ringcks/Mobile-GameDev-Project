@@ -70,14 +70,14 @@ public class PlayerBehaviour : MonoBehaviour
         // Check if we are running on a mobile device
 #if UNITY_IOS || UNITY_ANDROID
          //Check if Input has registered more than zero touches
-         if (Input.touchCount > 0)
-         {
-             //Store the first touch detected.
-             Touch touch = Input.touches[0];
-             SwipeTeleport(touch);
-             ScalePlayer();
-             TouchObjects(touch);
-         }
+         //if (Input.touchCount > 0)
+         //{
+         //    //Store the first touch detected.
+         //    Touch touch = Input.touches[0];
+         //    SwipeTeleport(touch);
+         //    ScalePlayer();
+         //    TouchObjects(touch);
+         //}
 #endif
 
         Turn();
