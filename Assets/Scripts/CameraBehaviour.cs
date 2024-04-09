@@ -8,6 +8,7 @@ public class CameraBehaviour : MonoBehaviour
     public Transform target;
     [Tooltip("How offset will the camera be to the target")]
     public Vector3 offset = new Vector3(0, 3, -6);
+    public Vector3 offset2 = new Vector3(0, 3, -6);
     /// <summary>
     /// Update is called once per frame
     /// </summary>
@@ -19,7 +20,7 @@ public class CameraBehaviour : MonoBehaviour
             // Set our position to an offset of our target
             transform.position = target.position + offset;
             // Change the rotation to face target
-            transform.LookAt(target);
+            transform.LookAt(target.position + offset2);
         }
     }
 }

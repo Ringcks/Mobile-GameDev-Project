@@ -7,17 +7,18 @@ public class PauseMenu : MonoBehaviour
     float previousTimeScale = 1;
 
     public static bool isPaused;
+    public GameObject pauseMenu;
 
-    // Start is called before the first frame update
-    void Start()
+    public void OpenPauseMenu()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(isPaused)
+        {
+            pauseMenu.SetActive(true);
+        }
+        else
+        {
+            pauseMenu.SetActive(false);
+        }
     }
 
     public void TogglePause()

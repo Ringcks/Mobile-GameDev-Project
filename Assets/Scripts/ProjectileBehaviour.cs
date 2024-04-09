@@ -7,17 +7,7 @@ public class ProjectileBehaviour : MonoBehaviour
 {
     public float waitTime = 2.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -26,14 +16,7 @@ public class ProjectileBehaviour : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // Destroy the player
-            Destroy(collision.gameObject);
-            // Call the function ResetGame after waitTime
-            // has passed
-
-            Invoke("ResetGame", waitTime);
-            ResetGame();
-
-            Debug.Log("Hit");
+            Destroy(gameObject);
         }
     }
 

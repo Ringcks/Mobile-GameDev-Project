@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     [Range(1, 15)]
     public int initSpawnNum = 10;
     public int initNoObstacles = 4;
+    public int difficulty;
 
     private Vector3 nextTileLocation;
     private Quaternion nextTileRotation;
@@ -37,12 +38,25 @@ public class GameController : MonoBehaviour
             float randomValue = Random.value; // Get a random value between 0 and 1
             if (randomValue <= 0.95f)
             {
-                SpawnObstacle(newTile); // Spawn obstacle for 9/10 of the time
+                Difficulty(); // Spawn obstacle for 9/10 of the time
             }
             else
             {
                 SpawnPickableItem(newTile); // Spawn pick-up item for 1/10 of the time
             }
+    }
+
+    void Difficulty()
+    {
+        var newTile = Instantiate(tile, nextTileLocation, nextTileRotation);
+        var nextTile = newTile.Find("NextSpawnPoint");
+        nextTileLocation = nextTile.position;
+        nextTileRotation = nextTile.rotation;
+
+        for (int i = 0; i < difficulty; ++i)
+        {
+            SpawnObstacle(newTile);
+        }
     }
 
     private void SpawnObstacle(Transform newTile)

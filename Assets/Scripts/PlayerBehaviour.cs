@@ -113,7 +113,7 @@ public class PlayerBehaviour : MonoBehaviour
          // Move player based on direction of the accelerometer
          horizontalSpeed = Input.acceleration.x * dodgeSpeed;
 
-        float yaw = Input.GetAxis("Horizontal") * dodgeSpeed / 10;
+        float yaw = Input.acceleration.x * dodgeSpeed / 10;
 
         myT.Rotate(0, 0, -yaw);
 

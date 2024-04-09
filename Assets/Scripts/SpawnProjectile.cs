@@ -25,7 +25,7 @@ public class SpawnProjectile : MonoBehaviour
     {
         int randomIndex = Random.Range(0, vfx.Count);
         int randomIndex2 = Random.Range(0, firepointlist.Count);
-        float randomwIndex3 = Random.Range(5, 10);
+        float randomwIndex3 = Random.Range(1, 2);
 
         effectToSpawn = vfx[randomIndex];
         Ulti = Ultimate;
@@ -41,7 +41,7 @@ public class SpawnProjectile : MonoBehaviour
 
             SpawnFX();
 
-            Debug.Log("Boss attack");
+            //Debug.Log("Boss attack");
         }
         else if(timer >= randomwIndex3 && randomValue >= 0.9)
         {
@@ -49,7 +49,7 @@ public class SpawnProjectile : MonoBehaviour
 
             SpawnUltimate();
 
-            Debug.Log("Boss ulti");
+            //Debug.Log("Boss ulti");
         }
 
     }
